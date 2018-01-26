@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block meta_tags %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="{{ brand_name }} ">
+    {% endblock %}
+
+    <title>{% block page_title %} {{ brand_name }} {% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    {% stylesheets  '@WebshopBundle/Resources/public/css/bootstrap.min.css'
+                    '@WebshopBundle/Resources/public/css/bootstrap-grid.min.css'
+                    '@WebshopBundle/Resources/public/css/bootstrap-reboot.min.css'
+                    '@WebshopBundle/Resources/public/css/font-awesome.css'
+                    '@WebshopBundle/Resources/public/css/style.css'
+                    %}
+                    <link href="{{ asset_url }}" rel="stylesheet">
+    {% endstylesheets %}
+
+
+    {% block stylesheets %} {% endblock %}
+</head>
+
+
+
+<body>
+
+    {% block top_menu %}
+        {% include ('@Webshop/templates/blocks/top-menu.html.twig') %}
+    {% endblock %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+                {% block main_page %}
+                <div class="col-lg-3">
+                    {% block left_menu %} {% endblock %}
+                </div>
+
+
+                <div class="col-lg-9">
+                    <!-- Page Heading -->
+                    {% block page_heading %} {% endblock %}
+
+                    {% block page_content %}
+                        page content
+                    {% endblock %}
+                </div>
+                {% endblock %}
+            </div>
+
+    </div>
+
+    <!-- /.container -->
+
+    <!-- Footer -->
+    {% block footer %}
+        {% include('@Webshop/templates/blocks/footer.html.twig') %}
+    {% endblock %}
+
+
+    <!-- Bootstrap core JavaScript -->
+    {% javascripts '@WebshopBundle/Resources/public/js/*' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% block javascripts %} {% endblock %}
+
+
+</body>
+
+</html>

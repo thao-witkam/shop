@@ -1,0 +1,37 @@
+{% extends('@Webshop/templates/layout.html.twig') %}
+
+{% block stylesheets %}
+    {% stylesheets '@WebshopBundle/Resources/public/css/3-col-portfolio.css' %}
+    <link href="{{ asset_url }}" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block page_content %}
+
+    {% include('@Webshop/templates/blocks/carousel.html.twig') %}
+
+    <div class="row">
+        {% for i in 1..8 %}
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project {{ i }}</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit!</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.row -->
+
+
+    <hr>
+
+    {% include('@Webshop/templates/blocks/pagination.html.twig') %}
+
+
+{% endblock %}

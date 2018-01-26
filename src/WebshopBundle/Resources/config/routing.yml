@@ -1,0 +1,3 @@
+webshop_homepage:
+    path:     /
+    defaults: { _controller: WebshopBundle:Default:index }

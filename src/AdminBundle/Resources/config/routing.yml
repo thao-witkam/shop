@@ -1,0 +1,8 @@
+
+admin_dashboard:
+    path:     /
+    defaults: { _controller: AdminBundle:Category:index }
+
+admin_category_list:
+    path:     /category
+    defaults: { _controller: AdminBundle:Category:index }

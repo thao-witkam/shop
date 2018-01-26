@@ -1,0 +1,37 @@
+{% extends('@Admin/templates/layout.html.twig') %}
+
+{% block stylesheets %}
+    {% stylesheets '@WebshopBundle/Resources/public/css/1-col-portfolio.css' %}
+        <link href="{{ asset_url }}" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+
+{% block page_content %}
+    <!-- Project One -->
+    <div class="row">
+        {% for i in 1..5 %}
+        <div class="col-md-7 py-3">
+            <a href="#">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3>Project {{ i }}</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate.</p>
+            <a class="btn btn-primary" href="#">View Project</a>
+        </div>
+
+        {% endfor %}
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+
+    <!-- Pagination -->
+    {% include('@Admin/templates/blocks/pagination.html.twig') %}
+
+
+{% endblock %}
